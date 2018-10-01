@@ -1,10 +1,7 @@
 <?php
-// src/Model/ItemManager.php
-require __DIR__ . '/../../app/db.php';
-
-
 namespace Model;
-
+require __DIR__ . '/../../app/db.php';
+// src/Model/ItemManager.php
 class ItemManager
 {
     public function selectAllItems()
@@ -16,4 +13,6 @@ class ItemManager
     }
 }
 
-?>
+
+
+

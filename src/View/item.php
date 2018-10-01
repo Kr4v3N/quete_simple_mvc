@@ -1,3 +1,6 @@
+<?php
+namespace View;
+?>
 <!DOCTYPE html>
 <html>
 <head> ... </head>
