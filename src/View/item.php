@@ -1,12 +1,10 @@
-<?php
-namespace View;
-?>
 <!DOCTYPE html>
 <html>
-<head> ... </head>
+<head>
+</head>
 <body>
     <section>
-        <h1>Items</h1>
+        <h1>PHP EN FORCE</h1>
             <ul>
             <?php foreach ($items as $item) : ?>
                 <li><?= $item['title'] ?></li>
