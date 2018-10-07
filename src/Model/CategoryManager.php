@@ -3,24 +3,27 @@
 namespace Model;
 require __DIR__ . '/../../app/db.php';
 
-// src/Model/ItemManager.php
-
-class ItemManager
+/**
+ * Class CategoryManager
+ *
+ * @package \Model
+ */
+class CategoryManager
 {
-    public function selectAllItems()
+
+    // récupération de toutes les categories
+    public function selectAllCategories(): array
     {
-        // récupération de tous les items
         $pdo = new \PDO(DSN, USER, PASS);
-        $query = "SELECT * FROM item";
+        $query = "SELECT * FROM category";
         $res = $pdo->query($query);
         return $res->fetchAll();
     }
-
     // la méthode prend l'id en paramètre
-    public function selectOneItem(int $id) : array
+    public function selectOneCategory(int $id) : array
     {
         $pdo = new \PDO(DSN, USER, PASS);
-        $query = "SELECT * FROM item WHERE id = :id";
+        $query = "SELECT * FROM category WHERE id = :id";
         $statement = $pdo->prepare($query);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
@@ -28,8 +31,6 @@ class ItemManager
         return $statement->fetch();
     }
 
+
 }
-
-
-
 
