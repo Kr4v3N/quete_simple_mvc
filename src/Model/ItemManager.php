@@ -1,22 +1,19 @@
 <?php
 
 namespace Model;
+// src/Model/ItemManager.php
 require __DIR__ . '/../../app/db.php';
 
-// src/Model/ItemManager.php
+class ItemManager{
 
-class ItemManager
-{
-    public function selectAllItems()
+    public function selectAllItems() :array
     {
-        // récupération de tous les items
         $pdo = new \PDO(DSN, USER, PASS);
         $query = "SELECT * FROM item";
         $res = $pdo->query($query);
         return $res->fetchAll();
     }
 
-    // la méthode prend l'id en paramètre
     public function selectOneItem(int $id) : array
     {
         $pdo = new \PDO(DSN, USER, PASS);
@@ -27,9 +24,6 @@ class ItemManager
         // contrairement à fetchAll(), fetch() ne renvoie qu'un seul résultat
         return $statement->fetch();
     }
-
 }
 
-
-
-
+?>
