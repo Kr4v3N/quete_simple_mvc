@@ -26,8 +26,8 @@ class CategoryController{
     public function show(int $id)
     {
         $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectOneCategory($id);
-        return $this->twig->render('showCategory.html.twig', ['categories' => $categories]);
+        $category = $categoryManager->selectOneCategory($id);
+        return $this->twig->render('showCategory.html.twig', ['categories' => $category]);
     }
 
 }
