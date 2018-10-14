@@ -6,7 +6,7 @@ require __DIR__ . '/../../app/db.php';
 
 class CategoryManager{
 
-    public function selectAllCategories() :array
+    public function selectAllCategories()
     {
         $pdo = new \PDO(DSN, USER, PASS);
         $query = "SELECT * FROM category";
@@ -14,7 +14,7 @@ class CategoryManager{
         return $res->fetchAll();
     }
 
-    public function selectOneCategory(int $id) : array
+    public function selectOneCategory(int $id)
     {
         $pdo = new \PDO(DSN, USER, PASS);
         $query = "SELECT * FROM category WHERE id = :id";
